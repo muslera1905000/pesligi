@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PES Lig</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="logo">PES LİGİ</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="hero">
+      <h1 id="leagueTitle">PES Ligi</h1>
+      <p>Canlı puan durumu, fikstür ve gol krallığı.</p>
+    </section>
+
+    <section class="section">
+      <div class="grid grid-3">
+        <div class="stat-box">
+          <div class="stat-title">Toplam Takım</div>
+          <div class="stat-value" id="statPlayers">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-title">Oynanan Maç</div>
+          <div class="stat-value" id="statPlayed">0</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-title">Toplam Gol</div>
+          <div class="stat-value" id="statGoals">0</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section card">
+      <h2>Puan Durumu</h2>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Takım</th>
+              <th>O</th>
+              <th>G</th>
+              <th>B</th>
+              <th>M</th>
+              <th>AG</th>
+              <th>YG</th>
+              <th>AV</th>
+              <th>P</th>
+            </tr>
+          </thead>
+          <tbody id="standingsTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="grid grid-2 section">
+      <div class="card">
+        <h2>Fikstür</h2>
+        <div id="fixturesPublic" class="list"></div>
+      </div>
+
+      <div class="card">
+        <h2>Gol Krallığı</h2>
+        <div id="scorersTable" class="list"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

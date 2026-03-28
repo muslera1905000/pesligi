@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PES Lig Admin Panel</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="logo">PES LİG ADMIN</div>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="hero">
+      <h1>Lig Yönetim Paneli</h1>
+      <p>Takımları ekle, fikstürü oluştur, maç sonuçlarını gir.</p>
+    </section>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="teamsTab">Takımlar</button>
+      <button class="tab-btn" data-tab="fixturesTab">Fikstür</button>
+      <button class="tab-btn" data-tab="resultsTab">Sonuç Gir</button>
+    </div>
+
+    <!-- TAKIMLAR -->
+    <section id="teamsTab" class="tab-content">
+      <div class="grid grid-2 section">
+        <div class="card">
+          <h2>Takım Ekle</h2>
+          <input type="text" id="teamName" placeholder="Takım adı" />
+          <input type="text" id="teamLogo" placeholder="Logo URL (şimdilik boş da olabilir)" />
+          <button class="primary" id="addTeamBtn">Takım Ekle</button>
+        </div>
+
+        <div class="card">
+          <h2>Takımlar</h2>
+          <div id="teamsList" class="list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FİKSTÜR -->
+    <section id="fixturesTab" class="tab-content hidden">
+      <div class="grid grid-2 section">
+        <div class="card">
+          <h2>Fikstür İşlemleri</h2>
+          <button class="primary" id="generateFixturesBtn">Otomatik 2 Devre Fikstür Oluştur</button>
+          <button class="secondary" id="clearFixturesBtn">Fikstürü Sıfırla</button>
+        </div>
+
+        <div class="card">
+          <h2>Oluşan Fikstür</h2>
+          <div id="fixturesList" class="list"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SONUÇ GİR -->
+    <section id="resultsTab" class="tab-content hidden">
+      <div class="grid grid-2 section">
+        <div class="card">
+          <h2>Maç Seç</h2>
+          <select id="fixtureSelect">
+            <option value="">Maç seç</option>
+          </select>
+
+          <div id="matchForm" class="hidden">
+            <div class="two-col">
+              <input type="number" id="homeScore" placeholder="Ev sahibi skoru" min="0" />
+              <input type="number" id="awayScore" placeholder="Deplasman skoru" min="0" />
+            </div>
+
+            <h3 style="margin: 12px 0;">Ev Sahibi Golcüleri</h3>
+            <div id="homeScorers"></div>
+            <button class="secondary" id="addHomeScorerBtn">+ Ev Sahibi Golcü Ekle</button>
+
+            <h3 style="margin: 18px 0 12px;">Deplasman Golcüleri</h3>
+            <div id="awayScorers"></div>
+            <button class="secondary" id="addAwayScorerBtn">+ Deplasman Golcü Ekle</button>
+
+            <button class="primary" id="saveResultBtn" style="margin-top:16px;">Sonucu Kaydet</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Seçilen Maç</h2>
+          <div id="selectedMatchPreview" class="small">Henüz maç seçilmedi.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
